@@ -5,14 +5,15 @@
 
 @if(Model.showForm == true)
 {
-    <form method="post">
+    <form method="post" class="col-6">
         <input type="text" hidden asp-for="emp.SSN">
         <label>Fname</label>
-        <input type="text" asp-for="emp.Fname" />
+        <input type="text" asp-for="emp.Fname" class="form-control"/>
         <label>Lname</label>
-        <input type="text" asp-for="emp.Lname" />
+        <input type="text" asp-for="emp.Lname" class="form-control"/>
         <label>Minit</label>
-        <input type="text" asp-for="emp.Minit" />
+        <input type="text" asp-for="emp.Minit" class="form-control"/>
+        <br>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 }
