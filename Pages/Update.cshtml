@@ -3,16 +3,19 @@
 @{
 }
 
-<form method="post">
-    <label>Fname</label>
-    <input type="text" />
-    <label>Lname</label>
-    <input type="text" />
-    <label>Minit</label>
-    <input type="text" />
-    <label>SSN</label>
-    <input type="number" />
-    <label>Bdate</label>
-    <input type="date" />
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+@if(Model.showForm == true)
+{
+    <form method="post">
+        <input type="text" hidden asp-for="emp.SSN">
+        <label>Fname</label>
+        <input type="text" asp-for="emp.Fname" />
+        <label>Lname</label>
+        <input type="text" asp-for="emp.Lname" />
+        <label>Minit</label>
+        <input type="text" asp-for="emp.Minit" />
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+}
+
+
+<p class="text-danger">@Model.msg</p>

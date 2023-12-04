@@ -5,15 +5,13 @@ using System.Data;
 
 namespace FL23_Lab10_AdoExercise.Pages
 {
+    [BindProperties(SupportsGet = true)]
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
         public DB db { get; set; }
         public DataTable dt { get; set; }
-
-        [BindProperty(SupportsGet = true)]
-        public string selectedSSN { get; set; }
-
+        public Employee selected_emp { get; set; }
         public IndexModel(ILogger<IndexModel> logger, DB db)
         {
             _logger = logger;
@@ -32,6 +30,10 @@ namespace FL23_Lab10_AdoExercise.Pages
         {
             Console.WriteLine("Inside onpostdelete.");
             return RedirectToPage("/Delete", new { ssn = ssn});
+        }
+        public IActionResult OnPostUpdate(string ssn)
+        {
+            return RedirectToPage("/Update", new { ssn = ssn });
         }
     }
 }
