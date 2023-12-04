@@ -1,0 +1,21 @@
+﻿@page
+@model FL23_Lab10_AdoExercise.Pages.CreateModel
+@{
+}
+
+<form method="post" class="col-6">
+    <label>Fname</label>
+    <input class="form-control" type="text" asp-for="@Model.emp.Fname"/>
+    <label>Lname</label>
+    <input class="form-control" type="text" asp-for="@Model.emp.Lname"/>
+    <label>Minit</label>
+    <input class="form-control" type="text" asp-for="@Model.emp.Minit"/>
+    <label>SSN</label>
+    <input class="form-control" type="number" asp-for="@Model.emp.SSN"/>
+    <label>Bdate</label>
+    <input class="form-control" type="date" asp-for="@Model.emp.BirthDate"/>
+    <br />
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<h2>@Model.msg</h2>

@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\FL23_Lab10_AdoExercise.props" />
+</Project>
