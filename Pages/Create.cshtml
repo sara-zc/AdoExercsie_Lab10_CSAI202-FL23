@@ -14,6 +14,7 @@
     <input class="form-control" type="number" asp-for="@Model.emp.SSN"/>
     <label>Bdate</label>
     <input class="form-control" type="date" asp-for="@Model.emp.BirthDate"/>
+    <span class="text-danger">@Model.validation_errors</span>
     <br />
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
