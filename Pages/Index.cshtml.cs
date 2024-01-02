@@ -22,8 +22,10 @@ namespace FL23_Lab10_AdoExercise.Pages
         {
             dt = db.ReadTable("Employee");
         }
-        public void OnPost()
+        public IActionResult OnPost()
         {
+            TempData["test"] = "test";
+            return RedirectToPage("/Privacy");
 
         }
         public IActionResult OnPostDelete(string ssn)

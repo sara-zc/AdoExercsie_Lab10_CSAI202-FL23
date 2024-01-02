@@ -6,18 +6,16 @@ namespace FL23_Lab10_AdoExercise.Models
 {
     public class DB
     {
-        public string connectionString { get; set; }
-        public SqlConnection con = new SqlConnection();
+        private string connectionString = "Data Source=DESKTOP-1DD8VBL;Integrated Security=True;Initial Catalog=COMPANYDB_Lab10";
+        private SqlConnection con = new SqlConnection();
 
         public DB() {
-            connectionString = "Data Source=DESKTOP-1DD8VBL;Integrated Security=True;Initial Catalog=COMPANYDB_Lab10";
             con.ConnectionString = connectionString;
         }
 
         public DataTable ReadTable(string table)
         {
             DataTable dt = new DataTable();
-            dt.TableName = table;
             string query = "select * from Employee";
             SqlCommand cmd = new SqlCommand(query, con);
 
@@ -43,7 +41,7 @@ namespace FL23_Lab10_AdoExercise.Models
                 $"values('{emp.Fname}', '{emp.Minit}', '{emp.Lname}', '{emp.SSN}','{emp.BirthDate}')";
 
             SqlCommand cmd = new SqlCommand(query, con);
-            string res = "";
+            string res = "";    // this is for storing error messages (if any) and returning them from the function 
 
             try
             {
